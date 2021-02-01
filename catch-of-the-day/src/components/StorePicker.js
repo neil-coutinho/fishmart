@@ -5,8 +5,11 @@ class StorePicker extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <p>title</p>
-                <p>Hello World</p>
+                <form className="store-selector">
+                    <h2>Please enter a store</h2>
+                    <input type="text" />
+                    <button type="submit">Submit</button>
+                </form>
             </React.Fragment>
             
         )
