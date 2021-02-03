@@ -1,5 +1,5 @@
 import React from "react";
-
+import { getFunName } from "../helpers";
 class StorePicker extends React.Component {
     
     render() {
@@ -7,7 +7,7 @@ class StorePicker extends React.Component {
             <React.Fragment>
                 <form className="store-selector">
                     <h2>Please enter a store</h2>
-                    <input type="text" />
+                    <input type="text" defaultValue={getFunName()}/>
                     <button type="submit">Submit</button>
                 </form>
             </React.Fragment>
