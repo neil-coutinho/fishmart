@@ -17,7 +17,10 @@ class AddFish extends React.Component {
             image: this.getRefValue(this.imageRef),
         }
 
+        this.props.addFish(fish)
+
         console.log({fish})
+        e.currentTarget.reset();
     }
 
     getRefValue(ref) {
