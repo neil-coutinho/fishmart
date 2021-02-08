@@ -13,7 +13,7 @@ class Fish extends React.Component {
                    
                 </h3>
                 <p>{desc}</p>
-                <button disabled={!inStock}>{inStock ? 'Add to Cart': 'Sold Out!'}</button>
+                <button disabled={!inStock} onClick={this.props.addToOrder}>{inStock ? 'Add to Cart': 'Sold Out!'}</button>
             </li>
         )
     }

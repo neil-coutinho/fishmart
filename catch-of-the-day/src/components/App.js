@@ -9,9 +9,13 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            fishes: {}
+            fishes: {},
+            orders: {}
         }
     }
+
+
+
     addFish = (fish) => {
         console.log(fish)
         const fishes = {...this.state.fishes};
@@ -28,10 +32,19 @@ class App extends React.Component {
         })
     }
 
+    addToOrder = (fishKey) => {
+        //console.log({fishKey})
+        const orders = {...this.state.orders};
+        orders[fishKey] = orders[fishKey]+1 || 1;
+        this.setState({
+            orders
+        })
+    }
+
     render() {
 
         const fishes = Object.keys(this.state.fishes)
-                        .map(key => <Fish key={key} details={this.state.fishes[key]}/>);
+                        .map(key => <Fish key={key} details={this.state.fishes[key]} fishKey={key} addToOrder={() => this.addToOrder(key)}/>);
         
 
 
