@@ -39,7 +39,10 @@ class App extends React.Component {
             <div className="catch-of-the-day">
                 <div className="menu">
                     <Header tagline="Les fruit de mer"/>
-                    {fishes}
+                    <ul>
+                        {fishes}
+                    </ul>
+                   
                 </div>
                 <Order />
                 <Inventory addFish={this.addFish} addSampleFishes={this.addSampleFishes.bind(this)}/>
