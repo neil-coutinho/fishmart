@@ -35,7 +35,7 @@ class AddFish extends React.Component {
                 <input ref={this.priceRef} type="text" name="price" placeholder="150"/>
                 <select name="status" ref={this.statusRef}>
                     <option value="available">In Stock</option>
-                    <option value="sold-out">Sold Out</option>
+                    <option value="unavailable">Sold Out</option>
                 </select>
                 <textarea name="desc"  ref={this.descRef} placeholder="e.g. Fish description">
 
