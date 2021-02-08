@@ -4,7 +4,7 @@ const Header = (props) => {
     return (
         <React.Fragment>
             <header className="top">
-                <h1>Catch of the day</h1>
+                <h1>Fresh Fish</h1>
                 <h3 className="tagline"><span>{props.tagline}</span></h3>
             </header>
         </React.Fragment>
