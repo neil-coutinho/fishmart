@@ -10,7 +10,9 @@ const firebaseApp = firebase.initializeApp({
     storageBucket: "catch-of-the-day-njc.appspot.com",
     messagingSenderId: "662985616852",
     appId: "1:662985616852:web:aabf97eea218ce6ad1fa41",
-    measurementId: "G-8GZ6453312"
+    measurementId: "G-8GZ6453312",
+    databaseURL : "https://catch-of-the-day-njc-default-rtdb.firebaseio.com/"
+
   })
 
 
