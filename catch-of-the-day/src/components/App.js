@@ -16,11 +16,17 @@ class App extends React.Component {
     }
 
     componentDidMount () {
+        console.log('didMount')
         const { params } = this.props.match
         this.ref = base.syncState(`${params.storeId}/fishes`, {
             context: this,
             state: 'fishes'
         })
+    }
+
+    componentDidUpdate() {
+        console.log('didUpdate')
+        console.log(this.state);
     }
 
     componentWillUnmount() {
@@ -53,7 +59,7 @@ class App extends React.Component {
     }
 
     render() {
-
+        console.log('didRender')
         const fishes = Object.keys(this.state.fishes)
                         .map(key => <Fish key={key} details={this.state.fishes[key]} fishKey={key} addToOrder={() => this.addToOrder(key)}/>);
         
