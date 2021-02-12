@@ -14,7 +14,7 @@ class Inventory extends React.Component {
                     <button onClick={this.props.addSampleFishes}>Add Sample Fishes</button>
                     {
                         Object.keys(this.props.fishes)
-                            .map(key => <EditFish fish={this.props.fishes[key]} key={key}/>)
+                            .map(key => <EditFish fish={this.props.fishes[key]} editFish={this.props.editFish} key={key} fishKey={key}/>)
                          
                     }
                    
