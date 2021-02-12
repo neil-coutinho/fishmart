@@ -75,7 +75,7 @@ class App extends React.Component {
                    
                 </div>
                 <Order fishes={this.state.fishes} orders={this.state.orders} />
-                <Inventory addFish={this.addFish} addSampleFishes={this.addSampleFishes.bind(this)}/>
+                <Inventory addFish={this.addFish} addSampleFishes={this.addSampleFishes.bind(this)} fishes={this.state.fishes}/>
                
             </div>
         );
