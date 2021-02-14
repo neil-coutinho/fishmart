@@ -53,6 +53,15 @@ class App extends React.Component {
        
 
     }
+
+    removeFish = (fishKey) => {
+        const fishes = { ...this.state.fishes };
+        fishes[fishKey] = null; 
+
+        this.setState({
+            fishes
+        })
+    }
     
     addSampleFishes() {
         this.setState({
@@ -86,7 +95,7 @@ class App extends React.Component {
                    
                 </div>
                 <Order fishes={this.state.fishes} orders={this.state.orders} />
-                <Inventory addFish={this.addFish} editFish={this.editFish} addSampleFishes={this.addSampleFishes.bind(this)} fishes={this.state.fishes}/>
+                <Inventory addFish={this.addFish} editFish={this.editFish} removeFish={this.removeFish} addSampleFishes={this.addSampleFishes.bind(this)} fishes={this.state.fishes}/>
                
             </div>
         );

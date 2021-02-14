@@ -26,7 +26,7 @@ class EditFish extends React.Component {
                 </select>
                 <textarea name="desc" placeholder="e.g. Fish description" value={fish.desc} onChange={this.onChangeHandler}></textarea>
                 <input type="text" name="image" placeholder="image url" value={fish.image} onChange={this.onChangeHandler}/>
-
+                <button onClick={() => this.props.removeFish(this.props.fishKey)}> Remove Fish</button>
            </div>
        )
     }
