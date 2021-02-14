@@ -8,6 +8,7 @@ class Order extends React.Component {
                         .map((fishKey) => {
                             const count = this.props.orders[fishKey];
                             const fish = this.props.fishes[fishKey];
+                            const remove = <button onClick={() => this.props.removeFromOrder(fishKey)}>Remove</button>
                            
                             if(!fish) {
                                 return (
@@ -29,6 +30,7 @@ class Order extends React.Component {
                                 <li key={fishKey}>
                                     { count } lbs {fish.name} 
                                     { formatPrice((count*fish.price)) }
+                                    {remove}
                                 </li>
                             )
                         })
@@ -43,7 +45,7 @@ class Order extends React.Component {
         let total = 0;
 
         const {fishes, orders} = this.props;
-        console.log({fishes, orders})
+        //console.log({fishes, orders})
         total = Object.keys(orders)
                     .reduce((acc, fishKey) => {
 

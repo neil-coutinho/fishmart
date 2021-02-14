@@ -78,6 +78,16 @@ class App extends React.Component {
         })
     }
 
+    removeFromOrder = (fishKey) => {
+        const orders = {...this.state.orders};
+        if(orders.hasOwnProperty(fishKey)) {
+            delete orders[fishKey];
+        }
+        this.setState({
+            orders
+        })
+    }
+
     render() {
         console.log('didRender')
         const fishes = Object.keys(this.state.fishes)
@@ -94,8 +104,13 @@ class App extends React.Component {
                     </ul>
                    
                 </div>
-                <Order fishes={this.state.fishes} orders={this.state.orders} />
-                <Inventory addFish={this.addFish} editFish={this.editFish} removeFish={this.removeFish} addSampleFishes={this.addSampleFishes.bind(this)} fishes={this.state.fishes}/>
+                <Order fishes={this.state.fishes} orders={this.state.orders} removeFromOrder={this.removeFromOrder}/>
+                <Inventory 
+                addFish={this.addFish} 
+                editFish={this.editFish} 
+                removeFish={this.removeFish} 
+                addSampleFishes={this.addSampleFishes.bind(this)} 
+                fishes={this.state.fishes}/>
                
             </div>
         );
