@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Header = (props) => {
     return (
@@ -10,6 +11,11 @@ const Header = (props) => {
         </React.Fragment>
     )
 }
+
+Header.propTypes = {
+    tagline: PropTypes.string
+}
+
 // class Header extends React.Component {
 //     render() {
 //         return (
