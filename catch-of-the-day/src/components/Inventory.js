@@ -1,6 +1,7 @@
 import React from "react";
 import AddFish from "./AddFish";
 import EditFish from "./EditFish";
+import Login from "./Login";
 class Inventory extends React.Component {
 
 
@@ -10,6 +11,7 @@ class Inventory extends React.Component {
             <React.Fragment>
                 <div className="inventory">
                     <h2>Inventory</h2>
+                    <Login />
                     <AddFish  addFish={this.props.addFish}/>
                     <button onClick={this.props.addSampleFishes}>Add Sample Fishes</button>
                     {
