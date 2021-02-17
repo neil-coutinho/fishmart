@@ -3,13 +3,23 @@ import AddFish from "./AddFish";
 import EditFish from "./EditFish";
 import Login from "./Login";
 import firebase from "firebase";
-import {firebaseApp} from "../base";
+import base, {firebaseApp} from "../base";
 class Inventory extends React.Component {
+
+    authenticate = async (auth) => {
+        console.log({auth})
+        const uuid = auth.user.uid;
+        const storeId = this.props.storeId
+        const store = await base.fetch(storeId, {context: this});
+        console.log({storeId, store})
+    }
 
     auth = (type) => {
 
         const provider = new firebase.auth[`${type}AuthProvider`]();
-        console.log({provider})
+        firebaseApp.auth().signInWithPopup(provider)
+            .then(this.authenticate);
+        
     }
 
 
