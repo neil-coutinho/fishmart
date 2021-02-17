@@ -2,8 +2,15 @@ import React from "react";
 import AddFish from "./AddFish";
 import EditFish from "./EditFish";
 import Login from "./Login";
+import firebase from "firebase";
+import {firebaseApp} from "../base";
 class Inventory extends React.Component {
 
+    auth = (type) => {
+
+        const provider = new firebase.auth[`${type}AuthProvider`]();
+        console.log({provider})
+    }
 
 
     render() {
@@ -11,7 +18,7 @@ class Inventory extends React.Component {
             <React.Fragment>
                 <div className="inventory">
                     <h2>Inventory</h2>
-                    <Login />
+                    <Login auth={this.auth}/>
                     <AddFish  addFish={this.props.addFish}/>
                     <button onClick={this.props.addSampleFishes}>Add Sample Fishes</button>
                     {
