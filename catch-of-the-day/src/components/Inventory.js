@@ -44,8 +44,19 @@ class Inventory extends React.Component {
         
     }
 
+    logout = async () => {
+        await firebaseApp.auth().signOut()
+        this.setState({
+            uuid: null
+        })
+    }
+
+
 
     render() {
+
+        const logout = <button onClick={this.logout}>Logout</button>
+
         if(!this.state.uuid) {
             return (
                 <React.Fragment>
@@ -61,6 +72,7 @@ class Inventory extends React.Component {
         if(this.state.uuid != this.state.owner) {
             return (
                 <div className="inventory">
+                    {logout}
                     <p>Sorry you are not the owner of this store</p>
                 </div>
             )
@@ -73,7 +85,7 @@ class Inventory extends React.Component {
                 <div className="inventory">
                     <h2>Inventory</h2>
                     
-
+                    {logout}
                     
                     <AddFish  addFish={this.props.addFish}/>
                     <button onClick={this.props.addSampleFishes}>Add Sample Fishes</button>
